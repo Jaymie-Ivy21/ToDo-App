@@ -1,0 +1,27 @@
+.container-fluid{}
+.container{}
+
+.content{
+    height: 500px;
+}
+
+.card{}
+
+.shadow{}
+
+.input-group{}
+
+form-control{}
+
+.modal{}
+
+.modal-content{}
+
+.modal-header{}
+
+.modal-body{}
+
+
+#tasks:hover {
+    transform: scale(1.01);
+}
