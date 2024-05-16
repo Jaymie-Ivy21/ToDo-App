@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit{
       this.taskArr = res;
     }, err => {
       console.log("Unable to get list of tasks");
-    })
+    });
   }
   addTask() {
     this.taskObj.task_name = this.addTaskValue;
@@ -49,11 +49,17 @@ export class DashboardComponent implements OnInit{
     });
   alert("Task added successfully");
   }
-  deleteTask(taskId: number) {
+  deleteTask(taskId: Task) {
     this.todoService.deleteTask(taskId).subscribe(res=> {
+      this.ngOnInit();
       },
       err => {
         console.log("Unable to delete task");
       });
+  }
+
+  call(taskId : Task) {
+    this.taskObj = taskId;
+    this.editTaskValue = taskId.task_name;
   }
 }

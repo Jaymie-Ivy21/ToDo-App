@@ -22,7 +22,8 @@
                         <div class="p-2 shadow border" id="tasks">
                             <div class="input-group row ps-3">
                                 <div class="card col-md-10 border-0"> {{task.task_name}}</div>
-                                <button class="btn btn-outline-primary col me-2" data-bs-toggle="modal" type="button" data-bs-target="#exampleModal" ></button>
+                                <button class="btn btn-outline-primary col me-2" data-bs-toggle="modal" type="button" data-bs-target="#exampleModal" (click)="call(task)">E</button>
+                                <button class="btn btn-outline-danger col" (click)="deleteTask(task)" >X</button>
                             </div>
                         </div>
                     </div>

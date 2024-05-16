@@ -20,8 +20,8 @@ export class ToDoService {
   addTask(task : Task) : Observable<Task> {
     return this.http.post<Task>(this.todoURL, task)
   }
-  deleteTask(id : number) : Observable<Task> {
-    return this.http.delete<Task>(this.todoURL + "/" + id)
+  deleteTask(taskId : Task) : Observable<Task> {
+    return this.http.delete<Task>(this.todoURL + "/" + taskId.id)
   }
   updateTask(task : Task) : Observable<Task> {
     return this.http.put<Task>(this.todoURL + "/" + task.id, task)
