@@ -11,7 +11,7 @@ export class ToDoService {
   todoURL : string ;
 
   constructor(private http : HttpClient) { 
-    this.todoURL = "http://localhost:3000/task";
+    this.todoURL = "http://localhost:3000/tasks";
   }
 
   getAllTask() : Observable<Task[]> {
