@@ -4,6 +4,8 @@ import { ToDoService } from '../../service/to-do.service';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { error } from 'node:console';
+import { response } from 'express';
 
 @Component({
   selector: 'app-dashboard',
@@ -32,10 +34,10 @@ export class DashboardComponent implements OnInit{
   }
 
   viewTasks() {
-    this.todoService.getAllTask().subscribe(res => {
-      this.taskArr = res;
-    }, err => {
-      console.log("Unable to get list of tasks");
+    this.todoService.getAllTask().subscribe(response => {
+      this.taskArr = response;
+    }, (error) => {
+      console.log('Unable to get list of tasks', error);
     });
   }
   addTask() {
