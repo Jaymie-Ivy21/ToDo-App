@@ -51,8 +51,8 @@ export class DashboardComponent implements OnInit{
     });
   alert("Task added successfully");
   }
-  deleteTask(taskId: Task) {
-    this.todoService.deleteTask(taskId).subscribe(res=> {
+  deleteTask(task: Task) {
+    this.todoService.deleteTask(task).subscribe(res=> {
       this.ngOnInit();
       },
       err => {
@@ -60,8 +60,8 @@ export class DashboardComponent implements OnInit{
       });
   }
 
-  call(taskId : Task) {
-    this.taskObj = taskId;
-    this.editTaskValue = taskId.task_name;
+  call(task : Task) {
+    this.taskObj = task;
+    this.editTaskValue = task.task_name;
   }
 }
